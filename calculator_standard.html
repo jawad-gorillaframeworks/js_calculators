@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Calculator made in JavaScript, HTML, CSS -->
+    <!-- Author: Jawad -->
+    <!-- Organization: Gorilla Frameworks -->
+  <style>
+    .keyboard {
+      display: inline-block;
+      background-color: #dcdcdc;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .key {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 50px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    .text {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+
+  <script>
+    function todisplay(value)
+    {
+        document.getElementById("display").value += value;
+    }
+    function calculate() 
+    {
+        var displayValue = document.getElementById("display").value;
+        var result = eval(displayValue);
+        document.getElementById("display").value = result;
+    }
+    function clearDisplay() 
+    {
+      document.getElementById("display").value = "";
+    }
+  </script>
+</head>
+<body>
+  <div class="keyboard">
+    <div class="text">Developed by Gorilla Frameworks</div>
+    <br>
+    <div class="key" onclick="todisplay(7)">7</div>
+    <div class="key" onclick="todisplay(8)">8</div>
+    <div class="key" onclick="todisplay(9)">9</div>
+    <div class="key" onclick="todisplay('/')">/</div>
+    <div class="key" onclick="todisplay('*')">*</div>
+    <br>
+    <div class="key" onclick="todisplay(4)">4</div>
+    <div class="key" onclick="todisplay(5)">5</div>
+    <div class="key" onclick="todisplay(6)">6</div>
+    <div class="key" onclick="todisplay('-')">-</div>
+    <div class="key" onclick="todisplay('+')">+</div>
+    <br>
+    <div class="key" onclick="todisplay(1)">1</div>
+    <div class="key" onclick="todisplay(2)">2</div>
+    <div class="key" onclick="todisplay(3)">3</div>
+    <div class="key" onclick="todisplay('%')">%</div>
+    <div class="key" onclick="todisplay('C')">C</div>
+    <br>
+    <br>
+    <div class="key" onclick=calculate()>Calc</div>
+    <div class="key" onclick="clearDisplay()">C</div>
+    <input type="text" id="display" readonly>
+   
+    <!-- Add more keys as needed -->
+  </div>
+</body>
+</html>
